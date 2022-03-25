@@ -1,0 +1,12 @@
+* {
+    margin: 0.5em;
+    padding: 1em;
+}
+
+body {
+    background-color: purple;
+}
+
+h1 {
+    color: yellowgreen;
+}

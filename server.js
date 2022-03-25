@@ -7,12 +7,20 @@ require('dotenv').config(); // importing  dotenv configuration
 const PORT = process.env.PORT; // variable for the port # in .env file.
 const app = express(); // variable for express required above.
 
+
+// MIDDLEWARE (happens between req & res)
+app.set('views', __dirname + '/views'); // grabs the views folder files.
+app.use(express.static('public')); // access to public folder for css and images.
+app.set('view engine', 'jsx'); // to be able to look at the views .jsx pages
+app.engine('jsx', require('express-react-views').createEngine()); // importing 'express-react-views' to be able to use jsx
+
+
 // PLACES CONTROLLER ROUTE 
 app.use('/places', require('./controllers/places'))
 
-// ROUTES (initial stub route)
-app.get('/', (req, res) => { // -' / '- home route
-  res.send('Welcome to an Awesome App about Rest-Rants!')
+// ROUTES (initial stub route turned into home route)
+app.get('/', (req, res) => {
+    res.render('home')
 });
 
 

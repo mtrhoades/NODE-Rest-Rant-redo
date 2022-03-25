@@ -8,7 +8,7 @@ function Def (html) {
         <html>
             <head>
             {/* <title>{html.title || 'Rest-Rant'}</title> */}
-            <link href="/public/css/styles.css" rel="stylesheet">/link>
+            <link href="/css/styles.css" rel="stylesheet"></link>
             </head>
             <body>
                 {html.children}
