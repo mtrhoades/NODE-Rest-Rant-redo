@@ -18,6 +18,7 @@ app.engine('jsx', require('express-react-views').createEngine()); // importing '
 // PLACES CONTROLLER ROUTE 
 app.use('/places', require('./controllers/places'))
 
+
 // ROUTES (initial stub route turned into home route)
 app.get('/', (req, res) => {
     res.render('home')
