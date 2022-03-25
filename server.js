@@ -7,8 +7,10 @@ require('dotenv').config(); // importing  dotenv configuration
 const PORT = process.env.PORT; // variable for the port # in .env file.
 const app = express(); // variable for express required above.
 
+// PLACES CONTROLLER ROUTE 
+app.use('/places', require('./controllers/places'))
 
-// ROUTES
+// ROUTES (initial route)
 app.get('/', (req, res) => { // -' / '- home route
   res.send('Welcome to an Awesome App about Rest-Rants!')
 });
