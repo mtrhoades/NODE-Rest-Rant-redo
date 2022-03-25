@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 // 404 ROUTE (error page)
 app.get('*', (req, res) => {
-    res.status(404).send('<h1>error 404 please turn back!</h1>')
+    res.status(404).render('error404')
 });
 
 
