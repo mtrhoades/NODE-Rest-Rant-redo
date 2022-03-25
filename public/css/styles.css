@@ -9,4 +9,15 @@ body {
 
 h1 {
     color: yellowgreen;
+    text-align: center;
+}
+
+#homeImage {
+    display: inline-block;
+    justify-content: center;
+    width: 30%;
+}
+
+.col-sm-6 {
+    border: 1px solid black;
 }
