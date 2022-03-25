@@ -10,7 +10,7 @@ const app = express(); // variable for express required above.
 // PLACES CONTROLLER ROUTE 
 app.use('/places', require('./controllers/places'))
 
-// ROUTES (initial route)
+// ROUTES (initial stub route)
 app.get('/', (req, res) => { // -' / '- home route
   res.send('Welcome to an Awesome App about Rest-Rants!')
 });
