@@ -13,6 +13,7 @@ app.set('views', __dirname + '/views'); // grabs the views folder files.
 app.use(express.static('public')); // access to public folder for css and images.
 app.set('view engine', 'jsx'); // to be able to look at the views .jsx pages
 app.engine('jsx', require('express-react-views').createEngine()); // importing 'express-react-views' to be able to use jsx
+app.use(express.urlencoded({ extended: true }));
 
 
 // PLACES CONTROLLER ROUTE 

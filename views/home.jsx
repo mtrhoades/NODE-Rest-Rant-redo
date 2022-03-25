@@ -7,7 +7,7 @@ function home () {
     return (
         <Def>
             <main>
-                <h1>HOME PAGE</h1>
+                <h1>REST-RANT</h1>
                 <div id="homeImage">
                     <img src="/images/placeImage.jpg" alt="snowy volcano"></img>
                     <p>Shoutout to Japan for this picture</p>

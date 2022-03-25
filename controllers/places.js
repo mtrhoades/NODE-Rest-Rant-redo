@@ -1,24 +1,35 @@
 // IMPORTS/DEPENDENCIES
-const router = require('express').Router()
-
+const router = require('express').Router();
+const places = require('../models/places.js');
 
 // INDEX ROUTE ('/places') (GET, read route)
 router.get('/', (req, res) => {
-    let places = [{
-        name: 'H-Thai-ML',
-        city: 'Seattle',
-        state: 'WA',
-        cuisines: 'Thai, Pan-Asian',
-        pic: '/images/place1.jpeg'
-      }, {
-        name: 'Coding Cat Cafe',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Coffee, Bakery',
-        pic: '/images/place2.jpeg'
-      }]
     // res.send('This is the index of places route - /places')
     res.render('places/index', { places } );
+});
+
+
+// NEW PLACE ROUTE
+router.get('/new', (req, res) => {
+  res.render('places/new')
+});
+
+
+// CREATE ROUTE
+router.post('/', (req, res) => {
+  console.log(req.body)
+  if (!req.body.pic) {
+    // Default image if one is not provided
+    req.body.pic = 'http://placekitten.com/400/400'
+  }
+  if (!req.body.city) {
+    req.body.city = 'Anytown'
+  }
+  if (!req.body.state) {
+    req.body.state = 'USA'
+  }
+  places.push(req.body)
+  res.redirect('/places')
 });
 
 
