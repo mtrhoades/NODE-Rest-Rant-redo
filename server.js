@@ -1,5 +1,6 @@
 // DEPENDENCIES
 const express = require('express'); // importing express framework
+const methodOverride = require('method-override'); // enables adding PUT and DELETE to methods to override only using GET and POST
 
 
 // CONFIGURATION
@@ -14,6 +15,7 @@ app.use(express.static('public')); // access to public folder for css and images
 app.set('view engine', 'jsx'); // to be able to look at the views .jsx pages
 app.engine('jsx', require('express-react-views').createEngine()); // importing 'express-react-views' to be able to use jsx
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
 
 // PLACES CONTROLLER ROUTE 

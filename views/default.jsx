@@ -12,7 +12,20 @@ function Def (html) {
             <link href="/css/styles.css" rel="stylesheet"></link>
             </head>
             <body>
-                {html.children}
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/places">Places</a>
+                    </li>
+                    <li>
+                        <a href="/places/new">Add Place</a>
+                    </li>
+                </ul>
+            </nav>
+            {html.children}
             </body>
         </html>
     )

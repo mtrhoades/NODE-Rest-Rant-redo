@@ -1,14 +1,18 @@
-* {
-    margin: 0.5em;
-    padding: 1em;
-}
+
 
 body {
-    background-color: purple;
+    background-color: lightblue;
+    text-align: center;
 }
+  
+main {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: white;
+}  
 
 h1 {
-    color: yellowgreen;
+    color: darkcyan;
     text-align: center;
 }
 
@@ -20,4 +24,40 @@ h1 {
 
 .col-sm-6 {
     border: 1px solid black;
+}
+
+nav {
+    background-color: cornflowerblue;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav a {
+    color: white;
+    font-size: 1.5em;
+}
+
+nav a:hover {
+    color: pink;
+    text-decoration: none;
+}
+
+img {
+    width: 50%;
+}
+
+.images {
+    width: 50%;
+    display: inline-block;
 }
