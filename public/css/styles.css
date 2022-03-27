@@ -22,9 +22,9 @@ h1 {
     width: 30%;
 }
 
-.col-sm-6 {
+/* .col-sm-6 {
     border: 1px solid black;
-}
+} */
 
 nav {
     background-color: cornflowerblue;
@@ -61,3 +61,4 @@ img {
     width: 50%;
     display: inline-block;
 }
+
