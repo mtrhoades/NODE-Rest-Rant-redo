@@ -22,6 +22,7 @@ function show (data) {
                 <div className="description">
                 <br></br>
                     Located in {data.place.city}, {data.place.state} and serving {data.place.cuisines}.
+                    Founded in year {data.place.founded}
                 </div>
                 <br></br>
                 <div className="comments">
