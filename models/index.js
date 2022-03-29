@@ -10,4 +10,5 @@ console.log('connected to MONGO')
 
 
 // EXPORTS
-module.exports.Place = require('./places')
+module.exports.Place = require('./places');
+module.exports.Comment = require('./comment');

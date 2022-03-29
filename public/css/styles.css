@@ -16,15 +16,6 @@ h1 {
     text-align: center;
 }
 
-#homeImage {
-    display: inline-block;
-    justify-content: center;
-    width: 30%;
-}
-
-/* .col-sm-6 {
-    border: 1px solid black;
-} */
 
 nav {
     background-color: cornflowerblue;
@@ -54,11 +45,7 @@ nav a:hover {
 }
 
 img {
-    width: 50%;
-}
-
-.images {
-    width: 50%;
-    display: inline-block;
+    width: 40vw;
+    height: 40vh;
 }
 
