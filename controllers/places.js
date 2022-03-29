@@ -16,18 +16,40 @@ router.get('/', (req, res) => {
   // res.send('GET /places stub')
 });
 
+
 // create
 router.post('/', (req, res) => {
   db.Place.create(req.body)
   .then(() => {
-    res.redirect('/places')
+      res.redirect('/places')
   })
   .catch(err => {
-    console.log('err', err)
-    res.render('error404')
-  })
-  // res.send('POST /places stub')
-})
+    if (err && err.name == 'ValidationError') {
+      let message = 'Validation Error: '
+        for (var field in err.errors) {
+          message += `${field} was ${err.errors[field].value}. `
+          message += `${err.errors[field].message}`
+        }
+      console.log('Validation error message', message)
+      res.render('places/new', { message })
+      }
+      else {
+          res.render('error404')
+      }
+      })
+});
+// router.post('/', (req, res) => {
+//   db.Place.create(req.body)
+//   .then(() => {
+//     res.redirect('/places')
+//   })
+//   .catch(err => {
+//     console.log('err', err)
+//     res.render('error404')
+//   })
+//   // res.send('POST /places stub')
+// })
+
 
 // new place input
 router.get('/new', (req, res) => {
@@ -88,10 +110,6 @@ module.exports = router
 // // CREATE ROUTE
 // router.post('/', (req, res) => {
 //   console.log(req.body)
-//   if (!req.body.pic) {
-//     // Default image if one is not provided
-//     req.body.pic = 'http://placekitten.com/400/400'
-//   }
 //   if (!req.body.city) {
 //     req.body.city = 'Anytown'
 //   }
