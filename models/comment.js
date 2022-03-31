@@ -1,5 +1,5 @@
 // Imports
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 // schema
 let commentSchema = new mongoose.Schema({

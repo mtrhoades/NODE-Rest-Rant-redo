@@ -59,12 +59,27 @@ router.get('/new', (req, res) => {
 
 // edit
 router.put('/:id', (req, res) => {
-  res.send('PUT /places/:id stub')
+  db.Place.findByIdAndUpdate(req.params.id, req.body)
+  .then(() => {
+      res.redirect(`/places/${req.params.id}`)
+  })
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
+  // res.send('PUT /places/:id stub')
 });
 
 // edit place input
 router.get('/:id/edit', (req, res) => {
-  res.render('places/edit')
+  db.Place.findById(req.params.id)
+  .then(place => {
+      res.render('places/edit', { place })
+  })
+  .catch(err => {
+      res.render('error404')
+  })
+  // res.render('places/edit')
 });
 
 // show
@@ -84,8 +99,17 @@ router.get('/:id', (req, res) => {
 
 // delete place
 router.delete('/:id', (req, res) => {
-  res.send('DELETE /places/:id stub')
-})
+  db.Place.findByIdAndDelete(req.params.id)
+  .then(place => {
+      res.redirect('/places')
+  })
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
+  // res.send('DELETE /places/:id stub')
+});  
+  
 
 // create comment
 router.post("/:id/comment", (req, res) => {
@@ -116,9 +140,19 @@ router.post("/:id/comment", (req, res) => {
 
 
 // delete comment
-router.delete('/:id/rant/:rantId', (req, res) => {
-    res.send('GET /places/:id/rant/:rantId stub')
-})
+router.delete("/:id/comment/:commentId", (req, res) => {
+  db.Place.findOne({ id: req.params.id })
+    .then((place) => {
+      db.Comment.findByIdAndDelete(req.params.commentId).then((place) => {
+        res.redirect(`/places/${req.params.id}`);
+      });
+    })
+    .catch((err) => {
+      console.log("err", err);
+      res.render("error404");
+    });
+});
+
 
 // EXPORTS
 module.exports = router

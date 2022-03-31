@@ -36,7 +36,7 @@ function edit (data) {
                 </div>
                 <div className="form-group col-sm-6 col-md-4 col-lg-3">
                     <label for="founded">Founded Year</label>
-                    <input className="form-control" id="founded" name="founded" />
+                    <input className="form-control" id="founded" name="founded" value={data.place.founded} />
                 </div>
                 <input className="btn btn-primary" type="submit" value="Submit" />
                 </form>
